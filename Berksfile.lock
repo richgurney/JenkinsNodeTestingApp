@@ -1,0 +1,26 @@
+DEPENDENCIES
+  mongo-server
+    git: git@github.com:richgurney/ChefMongo2.git
+    revision: c0ca831f38dfe5c622551d0c027aecec50282a50
+  node
+    git: git@github.com:richgurney/ChefNode.git
+    revision: 8224623b75a3e3856650bad3fa0f2a0203d35568
+
+GRAPH
+  ark (4.0.0)
+    build-essential (>= 0.0.0)
+    seven_zip (>= 0.0.0)
+  build-essential (8.2.1)
+    mingw (>= 1.1)
+    seven_zip (>= 0.0.0)
+  mingw (2.1.0)
+    seven_zip (>= 0.0.0)
+  mongo-server (0.3.1)
+  node (0.1.0)
+    nodejs (~> 5.0.0)
+  nodejs (5.0.0)
+    ark (>= 2.0.2)
+    build-essential (>= 0.0.0)
+  seven_zip (3.0.0)
+    windows (>= 0.0.0)
+  windows (5.1.1)
