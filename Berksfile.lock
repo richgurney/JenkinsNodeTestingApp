@@ -1,10 +1,10 @@
 DEPENDENCIES
   mongo-server
     git: git@github.com:richgurney/ChefMongo2.git
-    revision: c0ca831f38dfe5c622551d0c027aecec50282a50
+    revision: dff9eb41a84fbc6f41398c4fbed2ceeca916f8cc
   node
     git: git@github.com:richgurney/ChefNode.git
-    revision: 8224623b75a3e3856650bad3fa0f2a0203d35568
+    revision: 4466dbaa57d39b33d0d6f125bfbf6515d104676b
 
 GRAPH
   ark (4.0.0)
@@ -23,4 +23,4 @@ GRAPH
     build-essential (>= 0.0.0)
   seven_zip (3.0.0)
     windows (>= 0.0.0)
-  windows (5.1.1)
+  windows (5.1.3)

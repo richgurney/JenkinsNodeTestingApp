@@ -20,7 +20,7 @@
     },
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "Node-App-Richard-{{timestamp}}"
+    "ami_name": "rich-node-server-{{timestamp}}"
   }],
   "provisioners": [
     {
