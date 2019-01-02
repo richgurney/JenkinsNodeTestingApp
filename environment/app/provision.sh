@@ -6,8 +6,6 @@ sudo apt-get update -y
 # upgrade any packages available
 sudo apt-get upgrade -y
 
-# install nginx
-sudo apt-get install nginx -y
 
 # install git
 sudo apt-get install git -y
@@ -20,6 +18,11 @@ sudo apt-get install nodejs -y
 # install pm2
 sudo npm install pm2 -g
 
-# set up nginx reverse proxy
-sudo ln -s /home/ubuntu/environment/nodeapp.conf /etc/nginx/conf.d/nodeapp.conf
-sudo nginx -s reload
+sudo apt-get install nginx -y
+
+# remove the old file and add our one
+sudo rm /etc/nginx/sites-available/default
+sudo cp environment/app/nginx.default /etc/nginx/sites-available/default
+
+# finally, restart the nginx service so the new config takes hold
+sudo service nginx restart

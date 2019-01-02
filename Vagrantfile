@@ -35,10 +35,10 @@ Vagrant.configure("2") do |config|
     app.hostsupdater.aliases = ["development.local"]
     app.vm.synced_folder "app", "/home/ubuntu/app"
     app.vm.synced_folder "environment/app", "/home/ubuntu/environment"
-    # app.vm.provision "shell", path: "environment/app/provision.sh", privileged: false
-    app.vm.provision "chef_solo" do |chef|
-      chef.add_recipe "node::default"
-    end
+    app.vm.provision "shell", path: "environment/app/provision.sh", privileged: false
+    # app.vm.provision "chef_solo" do |chef|
+    #   chef.add_recipe "node::default"
+    # end
     app.vm.provision "shell", inline: set_env({ DB_HOST: "mongodb://192.168.10.150" }), privileged: false
   end
 
@@ -47,9 +47,9 @@ Vagrant.configure("2") do |config|
     db.vm.network "private_network", ip: "192.168.10.150"
     db.hostsupdater.aliases = ["database.local"]
     db.vm.synced_folder "environment/db", "/home/ubuntu/environment"
-    # db.vm.provision "shell", path: "environment/db/provision.sh", privileged: false
-    db.vm.provision "chef_solo" do |chef|
-      chef.add_recipe "mongo-server::default"
-    end
+    db.vm.provision "shell", path: "environment/db/provision.sh", privileged: false
+    # db.vm.provision "chef_solo" do |chef|
+    #   chef.add_recipe "mongo-server::default"
+    # end
   end
 end
